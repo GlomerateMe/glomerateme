@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Exchange info..without anyone's info.">
+    <meta name="author" content="Tomer Shvueli">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Glomerate.Me</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Glomerate.Me</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Exchange info... blindfolded.</h1>
+        <br />
+        <p><a class="btn btn-lg btn-success" href="#" role="button" id="try-it">Try it!</a></p>
+
+        <form id="try-it-form">
+          <div class="form-group col-sm-8 col-sm-offset-2">
+            <label for="group-id" class="col-sm-3">Group ID:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="group-id" name="group-id" placeholder="team-awesome">
+            </div>
+          </div>
+          <div class="col-sm-2">&nbsp;</div>
+          <div class="form-group col-sm-8 col-sm-offset-2">
+            <label for="subject" class="col-sm-3">Subject:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Your Name">
+            </div>
+          </div>
+          <div class="col-sm-2">&nbsp;</div>
+          <div class="form-group col-sm-8 col-sm-offset-2">
+            <label for="body" class="col-sm-3">Body:</label>
+            <div class="col-sm-9">
+              <textarea rows="3" class="form-control" placholder="Your info..." name="body" id="body"></textarea>
+            </div>
+          </div>
+          <div class="col-sm-2">&nbsp;</div>
+          <div class="col-sm-6 col-sm-offset-3 center">
+            <a href="#" id="submit-form" class="btn btn-success">Send</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-12">
+          <h4><i class="fa fa-key"></i> Pick a group ID</h4>
+          <p>Find an ID that your whole group can get down with. </p>
+
+          <h4><i class="fa fa-envelope"></i> Send a single email</h4>
+          <p>Send an email to <a href="mailto:Glomerate.Me+GROUP_ID@gmail.com">Glomerate.Me+GROUP_ID@gmail.com</a> with your information in the body. </p>
+
+          <h4><i class="fa fa-usd"></i> Profit</h4>
+          <p>Within half an hour, you'll have everyone else's information delivered straight to your inbox. </p>
+        </div>
+
+      <footer class="footer">
+        <p>&copy; Glomerate.Me 2015</p>
+      </footer>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $("#try-it").click(function(e) {
+          e.preventDefault();
+
+          $("#try-it-form").slideToggle(400, function() {
+            $("#group-id").focus();
+          });
+        });
+
+        $("#submit-form").click(function(e) {
+          var groupId = $("#group-id").val();
+          var subject = $("#subject").val();
+          var body    = $("#body").val();
+
+          window.location.href = "mailto:Glomerate.Me+" + groupId + "@gmail.com?subject=" + subject + "&body=" + body;
+        });
+      });
+    </script>
+  </body>
+</html>
