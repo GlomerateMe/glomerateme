@@ -37,7 +37,8 @@
       <div class="jumbotron">
         <h1>Exchange info... blindfolded.</h1>
         <br />
-        <p><a class="btn btn-lg btn-success" href="#" role="button" id="try-it">Try it!</a></p>
+        <h4><i class="fa fa-arrow-down" aria-hidden="true"></i> Try it below! <i class="fa fa-arrow-down" aria-hidden="true"></i></h4>
+        <br />
 
         <form id="try-it-form">
           <div class="form-group col-sm-8 col-sm-offset-2">
@@ -80,7 +81,7 @@
         </div>
 
       <footer class="footer">
-        <p>&copy; Glomerate.Me 2015</p>
+        <p>&copy; Glomerate.Me 2016</p>
       </footer>
 
     </div>
@@ -89,18 +90,10 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(function() {
-        $("#try-it").click(function(e) {
-          e.preventDefault();
-
-          $("#try-it-form").slideToggle(400, function() {
-            $("#group-id").focus();
-          });
-        });
-
         $("#submit-form").click(function(e) {
           var groupId = $("#group-id").val();
           var subject = $("#subject").val();
-          var body    = $("#body").val();
+          var body    = $("#body").val().replace(/\n/g, '<br />');
 
           window.location.href = "mailto:Glomerate.Me+" + groupId + "@gmail.com?subject=" + subject + "&body=" + body;
         });
