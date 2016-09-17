@@ -91,6 +91,8 @@
     <script type="text/javascript">
       $(function() {
         $("#submit-form").click(function(e) {
+          e.preventDefault();
+
           var groupId = $("#group-id").val();
           var subject = $("#subject").val();
           var body    = $("#body").val().replace(/\n/g, '<br />');
